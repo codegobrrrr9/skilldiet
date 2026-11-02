@@ -1,6 +1,6 @@
 {
   "note": "Seven skill packs trending on GitHub on 2026-11-01 (10,000+ stars, gained stars in the last 24 hours), pinned to the commit below. A skill is a SKILL.md at skills/<name>/, skills/<group>/<name>/ or .claude/skills/<name>/ (so mirror copies for other agents, tests and templates are not counted twice).",
-  "include": "^(?:\.claude/)?skills/(?:[^/]+/){1,2}SKILL\.md$",
+  "include": "^(?:\\.claude/)?skills/(?:[^/]+/){1,2}SKILL\\.md$",
   "exclude": "template|/tests?/|node_modules",
   "packs": [
     { "id": "obra-superpowers", "repo": "obra/superpowers", "sha": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b", "stars": 310572 },
