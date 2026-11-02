@@ -11,6 +11,9 @@ import { realpathSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { discover } from './skills.js';
+
+// calendar day in the machine's own time zone, not UTC
+const localDay = (v) => { const d = v ? new Date(v) : null; if (!d || Number.isNaN(d.getTime())) return 'n/a'; const p = (n) => String(n).padStart(2, '0'); return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()); };
 import { costOf, packTotals, hygiene, collisions, estimateTokens, COLLISION_DEFAULTS } from './analyze.js';
 import { readUsage, matchUsage } from './usage.js';
 import { planPrune, applyPrune, restore, readManifest } from './prune.js';
@@ -88,7 +91,7 @@ export async function main(argv, env = process.env) {
     const neverTokens = never.reduce((n, r) => n + r.c.listingTokens, 0);
     const lines = [];
     lines.push(`skilldiet usage  ·  ${usage.window.files} session logs over ${usage.window.days} days  ·  ${usedRows.length} of ${skills.length} skills used  ·  ${never.length} never fired, costing about ${num(neverTokens)} tokens per session (estimate)`);
-    lines.push('\nUsed:'); for (const r of usedRows.sort((x, y) => y.u.count - x.u.count)) lines.push(`  ${String(r.u.count).padStart(4)}×  ${pad(r.s.name, 32)} ${pad(r.s.pack, 28)} last ${r.u.last ? r.u.last.slice(0, 10) : 'n/a'}`);
+    lines.push('\nUsed:'); for (const r of usedRows.sort((x, y) => y.u.count - x.u.count)) lines.push(`  ${String(r.u.count).padStart(4)}×  ${pad(r.s.name, 32)} ${pad(r.s.pack, 28)} last ${localDay(r.u.last)}`);
     lines.push('\nNever fired in these logs:'); for (const r of never.sort((x, y) => y.c.listingTokens - x.c.listingTokens)) lines.push(`  ${pad(r.s.name, 32)} ${pad(r.s.pack, 28)} ${String(r.c.listingTokens).padStart(4)} tokens`);
     lines.push(`\nThe window is only as long as your retained session logs (Claude Code keeps 30 days by default), and a skill used once a quarter will look unused. Skills are matched by name; a skill another skill calls internally is not counted.`);
     if (cmd === 'usage') { if (f.json) out(JSON.stringify({ window: usage.window, used: usedRows.map(r => ({ name: r.s.name, pack: r.s.pack, count: r.u.count, last: r.u.last })), never: never.map(r => ({ name: r.s.name, pack: r.s.pack, tokens: r.c.listingTokens })) }, null, 2)); else out(lines.join('\n')); return 0; }
@@ -103,6 +106,8 @@ export async function main(argv, env = process.env) {
   for (const s of plan.candidates) out(`  ${pad(s.name, 32)} ${s.dir.replace(/\\/g, '/').split('/').slice(-3).join('/')}  ${costOf(s).listingTokens} tokens`);
   const skippedPlugins = plan.kept.filter(k => k.skill.owner === 'plugin').length;
   if (skippedPlugins) out(`  (${skippedPlugins} plugin-managed skills not touched: disable the plugin to remove them)`);
+  const graceHeld = plan.kept.filter(k => k.skill.owner !== 'plugin' && /^installed in the last/.test(k.why));
+  if (graceHeld.length) out(`  (${graceHeld.length} user skill${graceHeld.length === 1 ? '' : 's'} held back because ${graceHeld.length === 1 ? 'it was' : 'they were'} installed in the last ${f.grace ? Number(f.grace) : 14} days and may not have had time to fire: ${graceHeld.map(k => k.skill.name).join(', ')}. --grace 0 includes them.)`);
   if (!plan.candidates.length) { out('nothing to park.'); return 0; }
   if (!f.apply) { out('\nDry run: nothing was moved. --apply parks these in your skills-disabled folder (nothing is deleted; skilldiet restore brings them back).'); return 0; }
   const r = applyPrune(plan.candidates, env);

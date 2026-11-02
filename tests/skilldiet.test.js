@@ -163,3 +163,12 @@ test('--df ignores words found in most of your skills, so a repeated template ph
   assert.equal(collisions(skills, { threshold: 0.3, minShared: 4, df: 0.25 }).length, 0, 'with the filter they do not');
   assert.equal(collisions(skills.slice(0, 3), { threshold: 0.3, minShared: 4, df: 0.25 }).length > 0, true, 'a set under 8 skills is not filtered');
 });
+
+test('prune output names the unused skills it held back for the grace period, so "nothing to park" is never silent about them', async () => {
+  writeSkill(iso.skills, 'brand-new-skill');                                              // installed just now, never used
+  const prune = await run(['prune']);
+  assert.match(prune.all, /held back because .*installed in the last 14 days.*brand-new-skill/);
+  assert.ok(!/held back.*\balpha\b/.test(prune.all), 'a skill that did fire is not described as held back');
+  const zero = await run(['prune', '--grace', '0']);
+  assert.match(zero.all, /brand-new-skill\s/);
+});

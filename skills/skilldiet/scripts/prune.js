@@ -18,9 +18,9 @@ export function planPrune(skills, usage, { keep = [], graceDays = 14, now = Date
     if (s.owner !== 'user') { out.kept.push({ skill: s, why: s.owner === 'plugin' ? 'managed by a plugin: disable the plugin instead' : 'not in your skills folder' }); continue; }
     if (keepSet.has(s.name.toLowerCase()) || keepSet.has(s.dirName.toLowerCase())) { out.kept.push({ skill: s, why: 'on your --keep list' }); continue; }
     if (usage.window.files === 0) { out.kept.push({ skill: s, why: 'no session logs to judge by' }); continue; }
-    if (now - s.mtime < graceDays * 86400000) { out.kept.push({ skill: s, why: `installed in the last ${graceDays} days` }); continue; }
     const u = matchUsage(s, usage.used);
     if (u.count > 0) { out.kept.push({ skill: s, why: `used ${u.count} time${u.count === 1 ? '' : 's'}` }); continue; }
+    if (now - s.mtime < graceDays * 86400000) { out.kept.push({ skill: s, why: `installed in the last ${graceDays} days` }); continue; }
     out.candidates.push(s);
   }
   return out;
