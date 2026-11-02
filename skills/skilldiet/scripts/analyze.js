@@ -62,8 +62,15 @@ export function stems(text) {
 // `minShared` shared stems) or when they share a name. Report pairs with the shared words, never a verdict: whether two skills actually compete
 // for the same request is a judgment the reader has to make.
 export const COLLISION_DEFAULTS = { threshold: 0.30, minShared: 6 };
-export function collisions(skills, { threshold = COLLISION_DEFAULTS.threshold, minShared = COLLISION_DEFAULTS.minShared } = {}) {
+// df (off by default): ignore words that appear in more than this share of the skills being compared. A template phrase repeated across your own skills
+// ("this is the sole trigger", "do not activate for any other reason") otherwise makes unrelated skills look alike. Applies to sets of 8 skills or more.
+export function collisions(skills, { threshold = COLLISION_DEFAULTS.threshold, minShared = COLLISION_DEFAULTS.minShared, df = null } = {}) {
   const sets = skills.map(s => stems(s.description));
+  if (df && skills.length >= 8) {
+    const freq = new Map();
+    for (const set of sets) for (const w of set) freq.set(w, (freq.get(w) || 0) + 1);
+    for (const set of sets) for (const w of [...set]) if (freq.get(w) / skills.length > df) set.delete(w);
+  }
   const pairs = [];
   for (let i = 0; i < skills.length; i++) for (let j = i + 1; j < skills.length; j++) {
     const a = skills[i], b = skills[j];

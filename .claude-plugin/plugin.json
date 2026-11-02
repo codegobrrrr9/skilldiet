@@ -1,0 +1,10 @@
+{
+  "name": "skilldiet",
+  "version": "0.1.0",
+  "description": "What your agent skills cost you every session, which ones overlap, and which never fire. Measures the skill listing in tokens, reads your session logs, parks unused skills reversibly.",
+  "author": { "name": "codegobrrrr9", "url": "https://github.com/codegobrrrr9" },
+  "homepage": "https://github.com/codegobrrrr9/skilldiet",
+  "repository": "https://github.com/codegobrrrr9/skilldiet",
+  "license": "MIT",
+  "keywords": ["skills", "context", "tokens", "claude-code", "agent-skills"]
+}

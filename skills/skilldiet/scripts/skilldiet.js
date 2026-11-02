@@ -37,11 +37,17 @@ export function gather(a, env = process.env) {
   return discover({ env, project: a.flags.project && a.flags.project !== true ? a.flags.project : null, paths: (a.multi.path || []).filter(p => p !== true), includePlugins: !a.flags['no-plugins'] });
 }
 
-export function analyze(skills) {
+// --loose is a more sensitive collision setting (4 shared stems, overlap 0.18). It was chosen after looking at the benchmark labels, so its numbers are not evidence.
+export function collisionOptions(flags) {
+  const df = flags.df ? Number(flags.df) : null;
+  if (flags.loose) return { threshold: 0.18, minShared: 4, df };
+  return { threshold: flags.threshold ? Number(flags.threshold) : COLLISION_DEFAULTS.threshold, minShared: flags['min-shared'] ? Number(flags['min-shared']) : COLLISION_DEFAULTS.minShared, df };
+}
+export function analyze(skills, opts = COLLISION_DEFAULTS) {
   const packs = packTotals(skills);
   const totalTokens = skills.reduce((n, s) => n + costOf(s).listingTokens, 0);
   const issues = skills.map(s => ({ s, list: hygiene(s) })).filter(x => x.list.length);
-  return { packs, totalTokens, issues, pairs: collisions(skills) };
+  return { packs, totalTokens, issues, pairs: collisions(skills, opts) };
 }
 
 function printScan(skills, an, flags) {
@@ -72,7 +78,7 @@ export async function main(argv, env = process.env) {
   }
   if (!['scan', 'usage', 'prune', 'report'].includes(cmd)) { err(`unknown command "${cmd}". Run skilldiet help.`); return 2; }
   const skills = gather(a, env);
-  const an = analyze(skills);
+  const an = analyze(skills, collisionOptions(f));
   if (cmd === 'scan') { if (f.json) out(JSON.stringify(jsonScan(skills, an), null, 2)); else printScan(skills, an, f); return 0; }
 
   const usage = await readUsage({ env, days: f.days ? Number(f.days) : null });
@@ -118,6 +124,7 @@ function readHelp() {
   report   usage as a markdown file (--out)
 
 flags: --path <dir> (repeatable)  --project <dir>  --no-plugins  --days N  --keep a,b  --grace 14  --top N  --json
+       --loose (collisions at 4 shared words and 0.18 overlap: more pairs, more false alarms)  --threshold 0.30  --min-shared 6  --df 0.25 (ignore words found in more than a quarter of your skills, e.g. a template phrase you repeat)
 Tokens are estimates (characters / 4). Security scanning is out of scope: see NVIDIA/SkillSpector.`;
 }
 

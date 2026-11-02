@@ -1,0 +1,6 @@
+{
+  "name": "skilldiet",
+  "version": "0.1.0",
+  "description": "What your agent skills cost you every session, which overlap, and which never fire.",
+  "contextFileName": "AGENTS.md"
+}

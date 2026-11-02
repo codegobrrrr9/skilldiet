@@ -154,3 +154,12 @@ test('CLI: scan prints cost and collisions, usage and prune dry run change nothi
   assert.ok(!scan.all.includes(real) && !prune.all.includes(real));
   const help = await run(['help']); assert.match(help.all, /Security scanning is out of scope/);
 });
+
+test('--df ignores words found in most of your skills, so a repeated template phrase does not make unrelated skills look alike', () => {
+  const boiler = 'Use this skill only when the user types the command. This is the sole trigger. Do not activate for any other reason, including when the user asks without the command.';
+  const mk = (name, topic) => ({ name, pack: 'p', description: `${topic} ${boiler}` });
+  const skills = [mk('a', 'Plans gardens and soil beds'), mk('b', 'Reviews mortgage rates and loans'), mk('c', 'Tunes guitar strings'), mk('d', 'Edits podcast audio tracks'), mk('e', 'Draws cartoon faces'), mk('f', 'Packs hiking backpacks'), mk('g', 'Brews coffee espresso'), mk('h', 'Paints watercolor skies')];
+  assert.ok(collisions(skills, { threshold: 0.3, minShared: 4 }).length > 0, 'without the filter the shared boilerplate makes pairs look alike');
+  assert.equal(collisions(skills, { threshold: 0.3, minShared: 4, df: 0.25 }).length, 0, 'with the filter they do not');
+  assert.equal(collisions(skills.slice(0, 3), { threshold: 0.3, minShared: 4, df: 0.25 }).length > 0, true, 'a set under 8 skills is not filtered');
+});

@@ -1,0 +1,251 @@
+{
+ "label": "first",
+ "definition": {
+  "threshold": 0.3,
+  "minShared": 6
+ },
+ "skills": 202,
+ "totalListingTokens": 18609,
+ "perPack": [
+  {
+   "id": "obra-superpowers",
+   "repo": "obra/superpowers",
+   "stars": 310572,
+   "skills": 15,
+   "listingTokens": 680,
+   "avg": 45,
+   "longest": 101,
+   "longestName": "diagnosing-superpowers",
+   "bodyTokens": 34361,
+   "avgBody": 2291,
+   "hygiene": {
+    "any": 1,
+    "name": 0,
+    "descriptionTooLong": 0,
+    "noWhen": 1,
+    "bigBody": 0
+   }
+  },
+  {
+   "id": "mattpocock-skills",
+   "repo": "mattpocock/skills",
+   "stars": 309173,
+   "skills": 39,
+   "listingTokens": 1560,
+   "avg": 40,
+   "longest": 109,
+   "longestName": "code-review",
+   "bodyTokens": 42141,
+   "avgBody": 1081,
+   "hygiene": {
+    "any": 24,
+    "name": 0,
+    "descriptionTooLong": 0,
+    "noWhen": 24,
+    "bigBody": 0
+   }
+  },
+  {
+   "id": "anthropics-skills",
+   "repo": "anthropics/skills",
+   "stars": 186317,
+   "skills": 19,
+   "listingTokens": 2435,
+   "avg": 128,
+   "longest": 271,
+   "longestName": "claude-api",
+   "bodyTokens": 69763,
+   "avgBody": 3672,
+   "hygiene": {
+    "any": 5,
+    "name": 0,
+    "descriptionTooLong": 1,
+    "noWhen": 3,
+    "bigBody": 2
+   }
+  },
+  {
+   "id": "taste-skill",
+   "repo": "Leonxlnx/taste-skill",
+   "stars": 107684,
+   "skills": 1,
+   "listingTokens": 244,
+   "avg": 244,
+   "longest": 244,
+   "longestName": "design-taste-frontend",
+   "bodyTokens": 9620,
+   "avgBody": 9620,
+   "hygiene": {
+    "any": 1,
+    "name": 1,
+    "descriptionTooLong": 0,
+    "noWhen": 0,
+    "bigBody": 1
+   }
+  },
+  {
+   "id": "impeccable",
+   "repo": "pbakaus/impeccable",
+   "stars": 99229,
+   "skills": 1,
+   "listingTokens": 151,
+   "avg": 151,
+   "longest": 151,
+   "longestName": "impeccable",
+   "bodyTokens": 2774,
+   "avgBody": 2774,
+   "hygiene": {
+    "any": 0,
+    "name": 0,
+    "descriptionTooLong": 0,
+    "noWhen": 0,
+    "bigBody": 0
+   }
+  },
+  {
+   "id": "marketingskills",
+   "repo": "coreyhaines31/marketingskills",
+   "stars": 57833,
+   "skills": 53,
+   "listingTokens": 10746,
+   "avg": 203,
+   "longest": 260,
+   "longestName": "marketing-plan",
+   "bodyTokens": 199152,
+   "avgBody": 3758,
+   "hygiene": {
+    "any": 9,
+    "name": 0,
+    "descriptionTooLong": 0,
+    "noWhen": 0,
+    "bigBody": 9
+   }
+  },
+  {
+   "id": "claude-code-game-studios",
+   "repo": "Donchitos/Claude-Code-Game-Studios",
+   "stars": 32124,
+   "skills": 74,
+   "listingTokens": 2793,
+   "avg": 38,
+   "longest": 61,
+   "longestName": "propagate-design-change",
+   "bodyTokens": 244597,
+   "avgBody": 3305,
+   "hygiene": {
+    "any": 64,
+    "name": 0,
+    "descriptionTooLong": 0,
+    "noWhen": 64,
+    "bigBody": 11
+   }
+  }
+ ],
+ "combos": [
+  {
+   "packs": [
+    "obra-superpowers",
+    "mattpocock-skills"
+   ],
+   "skills": 54,
+   "listingTokens": 2240,
+   "collisions": 0,
+   "crossPack": 0,
+   "sameName": 0
+  },
+  {
+   "packs": [
+    "obra-superpowers",
+    "anthropics-skills"
+   ],
+   "skills": 34,
+   "listingTokens": 3115,
+   "collisions": 0,
+   "crossPack": 0,
+   "sameName": 0
+  },
+  {
+   "packs": [
+    "mattpocock-skills",
+    "anthropics-skills"
+   ],
+   "skills": 58,
+   "listingTokens": 3995,
+   "collisions": 0,
+   "crossPack": 0,
+   "sameName": 0
+  },
+  {
+   "packs": [
+    "obra-superpowers",
+    "mattpocock-skills",
+    "anthropics-skills"
+   ],
+   "skills": 73,
+   "listingTokens": 4675,
+   "collisions": 0,
+   "crossPack": 0,
+   "sameName": 0
+  },
+  {
+   "packs": [
+    "obra-superpowers",
+    "mattpocock-skills",
+    "anthropics-skills",
+    "taste-skill",
+    "impeccable",
+    "marketingskills",
+    "claude-code-game-studios"
+   ],
+   "skills": 202,
+   "listingTokens": 18609,
+   "collisions": 6,
+   "crossPack": 2,
+   "sameName": 2
+  }
+ ],
+ "validation": {
+  "flagged": 6,
+  "flaggedOverlap": 6,
+  "nearMisses": 26,
+  "nearMissOverlap": 17
+ },
+ "allPairs": [
+  {
+   "a": "mattpocock-skills/code-review",
+   "b": "claude-code-game-studios/code-review",
+   "jaccard": 0.1,
+   "sameName": true
+  },
+  {
+   "a": "mattpocock-skills/prototype",
+   "b": "claude-code-game-studios/prototype",
+   "jaccard": 0.07,
+   "sameName": true
+  },
+  {
+   "a": "claude-code-game-studios/team-audio",
+   "b": "claude-code-game-studios/team-combat",
+   "jaccard": 0.47,
+   "sameName": false
+  },
+  {
+   "a": "claude-code-game-studios/team-level",
+   "b": "claude-code-game-studios/team-narrative",
+   "jaccard": 0.44,
+   "sameName": false
+  },
+  {
+   "a": "marketingskills/cro",
+   "b": "marketingskills/signup",
+   "jaccard": 0.34,
+   "sameName": false
+  },
+  {
+   "a": "claude-code-game-studios/team-combat",
+   "b": "claude-code-game-studios/team-polish",
+   "jaccard": 0.32,
+   "sameName": false
+  }
+ ]
+}
