@@ -1,0 +1,456 @@
+{
+ "seed": 20261101,
+ "skills": 202,
+ "flaggedTotal": 6,
+ "nearMissTotal": 26,
+ "pairs": [
+  {
+   "id": "flagged-2",
+   "kind": "flagged",
+   "a": {
+    "name": "team-level",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the level team — level-designer, narrative-director, world-builder, art-director, systems-designer, qa-tester — for complete area creation."
+   },
+   "b": {
+    "name": "team-narrative",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the narrative team — narrative-director, writer, world-builder, level-designer — for story, world lore, narrative-driven levels."
+   }
+  },
+  {
+   "id": "near-1",
+   "kind": "near",
+   "a": {
+    "name": "story-done",
+    "pack": "claude-code-game-studios",
+    "description": "Closes a finished story: verifies each acceptance criterion, checks for design or ADR deviations and updates its status. Use when the user says a story is done, finished or ready to close."
+   },
+   "b": {
+    "name": "story-readiness",
+    "pack": "claude-code-game-studios",
+    "description": "Checks whether a story is ready to implement: clear acceptance criteria, no open questions, valid ADR and dependencies. Use when the user asks if a story, or the sprint's stories, are ready to start or build."
+   }
+  },
+  {
+   "id": "near-24",
+   "kind": "near",
+   "a": {
+    "name": "writing-beats",
+    "pack": "mattpocock-skills",
+    "description": "Writing, exploit; assemble raw material into a journey of beats, grounding each term before a beat leans on it."
+   },
+   "b": {
+    "name": "writing-shape",
+    "pack": "mattpocock-skills",
+    "description": "Writing, exploit: shape raw material into an article, paragraph by paragraph."
+   }
+  },
+  {
+   "id": "near-3",
+   "kind": "near",
+   "a": {
+    "name": "competitor-profiling",
+    "pack": "marketingskills",
+    "description": "When the user wants to research, profile, or analyze competitors from their URLs. Also use when the user mentions 'competitor profile,' 'competitor research,' 'competitor analysis,' 'profile this competitor,' 'analyze competitor,' 'competitive intelligence,' 'competitor deep dive,' 'who are my competitors,' 'competitor landscape,' 'competitor dossier,' 'competitive audit,' or 'research these competitors.' Input is a list of competitor URLs. Output is structured competitor profile markdown files. For creating comparison/alternative pages from profiles, see competitors. For sales-specific battle cards, see sales-enablement. For researching accounts you're selling to, see prospecting. For how a competitor grew over time and what to copy, see reverse-engineer-marketing."
+   },
+   "b": {
+    "name": "competitors",
+    "pack": "marketingskills",
+    "description": "When the user wants to create competitor comparison or alternative pages for SEO and buyer-facing use. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'comparison page,' '[Product] vs [Product],' '[Product] alternative,' 'competitive landing pages,' 'how do we compare to X,' 'competitor teardown,' 'audit our competitor pages,' 'are our comparison pages out of date,' or 'competitive asset audit.' Use this for any content that positions your product against competitors. Covers four formats: singular alternative, plural alternatives, you vs competitor, and competitor vs competitor. For auditing existing claims (not researching competitors from scratch, which is competitor-profiling; not technical SEO on these pages, which is seo-audit), use the asset audit here. For internal battle cards and sales-specific competitor docs, see sales-enablement."
+   }
+  },
+  {
+   "id": "near-8",
+   "kind": "near",
+   "a": {
+    "name": "executing-plans",
+    "pack": "obra-superpowers",
+    "description": "Use when executing an implementation plan in the current session as the implementer yourself — your human partner chose inline execution, or no subagent tool is available"
+   },
+   "b": {
+    "name": "subagent-driven-development",
+    "pack": "obra-superpowers",
+    "description": "Use when executing implementation plans with independent tasks in the current session"
+   }
+  },
+  {
+   "id": "near-26",
+   "kind": "near",
+   "a": {
+    "name": "analytics",
+    "pack": "marketingskills",
+    "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"event tracking,\" \"UTM parameters,\" \"tag manager,\" \"GTM,\" \"analytics implementation,\" \"tracking plan,\" \"how do I measure this,\" \"Mixpanel,\" \"Segment,\" \"are my events firing,\" or \"analytics isn't working.\" Use this whenever someone asks how to know if something is working or wants to measure marketing results. For getting conversions into ad platforms (pixels, conversion tags, CAPI, server-side) and verifying they arrived, see conversion-tracking. For choosing attribution models, comparing multi-touch/MMM/incrementality, or reconciling conflicting numbers across tools, see attribution. For A/B test measurement, see ab-testing. Rate metrics divide matching closed windows — never full-period spend by partial-period results."
+   },
+   "b": {
+    "name": "conversion-tracking",
+    "pack": "marketingskills",
+    "description": "Set up, audit, verify, or fix website conversion tracking. Use when the conversion is a form submission, booked meeting, chat, phone call, signup, or purchase; when conversions must reach Google Ads, Meta, GA4, LinkedIn, TikTok, or Microsoft Ads; when the work involves GTM tags and dataLayer events, pixels, the Conversions API (CAPI), Enhanced Conversions, server-side tagging, or gclid and fbclid capture; or when the user reports conversion problems like \"conversions stopped\", \"double counting\", \"spend but no conversions\", \"GA4 and Google Ads don't match\", or an Unverified or Inactive status. Covers lead gen and ecommerce. Always fire on confirmed success, never the submit click; verify a test conversion arrives; diagnose before changing anything; offer free and native paths alongside paid ones and disclose partner tools. For tracking plans and UTMs, see analytics. For attribution models, see attribution. For campaigns and bidding, see ads. For CRM lead-stage design, see revops."
+   }
+  },
+  {
+   "id": "near-22",
+   "kind": "near",
+   "a": {
+    "name": "algorithmic-art",
+    "pack": "anthropics-skills",
+    "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations."
+   },
+   "b": {
+    "name": "canvas-design",
+    "pack": "anthropics-skills",
+    "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations."
+   }
+  },
+  {
+   "id": "near-6",
+   "kind": "near",
+   "a": {
+    "name": "team-audio",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the audio team — audio-director, sound-designer, technical-artist, gameplay-programmer — direction through implementation."
+   },
+   "b": {
+    "name": "team-polish",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the polish team — performance-analyst, technical-artist, sound-designer, qa-tester — to optimize and harden a feature or area."
+   }
+  },
+  {
+   "id": "near-23",
+   "kind": "near",
+   "a": {
+    "name": "team-live-ops",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the live-ops team — live-ops-designer, economy-designer, analytics-engineer, community-manager, writer — for a season or live event."
+   },
+   "b": {
+    "name": "team-narrative",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the narrative team — narrative-director, writer, world-builder, level-designer — for story, world lore, narrative-driven levels."
+   }
+  },
+  {
+   "id": "near-7",
+   "kind": "near",
+   "a": {
+    "name": "offers",
+    "pack": "marketingskills",
+    "description": "When the user wants to design, construct, or improve an offer — the thing they actually sell — including value framing, bonus stacking, guarantee design, scarcity/urgency, naming, and payment structure. Also use when the user mentions 'offer,' 'offer design,' 'build an offer,' 'grand slam offer,' 'irresistible offer,' 'value stack,' 'bonus stack,' 'guarantee,' 'risk reversal,' 'money-back guarantee,' 'scarcity,' 'urgency,' 'high-ticket offer,' 'productize a service,' 'naming an offer,' 'payment plan,' 'down-sell,' 'upsell offer,' or 'why isn't my offer converting.' Best for services, agencies, courses, coaching, info products, high-ticket B2B, and direct-response. If you run pure self-serve SaaS, read pricing first — tiers and packaging do more work there. For price level itself (tiers, freemium, value metric), see pricing. For the page that presents the offer, see copywriting. For the launch moment, see launch. For sales collateral, see sales-enablement."
+   },
+   "b": {
+    "name": "pricing",
+    "pack": "marketingskills",
+    "description": "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' 'monetization,' 'how much should I charge,' 'my pricing is wrong,' 'pricing page,' 'annual vs monthly,' 'per seat pricing,' 'should I offer a free plan,' 'pricing page teardown,' 'pricing page audit,' 'is my pricing page AI-readable,' or 'can AI read my pricing.' Use this whenever someone is figuring out what to charge, how to structure their plans, or wants to audit a pricing page (for humans and for the AI agents that shortlist tools). For in-app upgrade screens, see paywalls. For offer construction (bonuses, guarantees, value framing, naming) on services/courses/coaching/high-ticket B2B, see offers."
+   }
+  },
+  {
+   "id": "flagged-1",
+   "kind": "flagged",
+   "a": {
+    "name": "team-combat",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the combat team — game-designer, gameplay-programmer, ai-programmer, technical-artist, sound-designer, qa-tester — design through implement and validate."
+   },
+   "b": {
+    "name": "team-polish",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the polish team — performance-analyst, technical-artist, sound-designer, qa-tester — to optimize and harden a feature or area."
+   }
+  },
+  {
+   "id": "near-9",
+   "kind": "near",
+   "a": {
+    "name": "cro",
+    "pack": "marketingskills",
+    "description": "When the user wants to optimize, improve, or increase conversions on any marketing page or form — including homepage, landing pages, pricing pages, feature pages, lead capture forms, or contact forms. Also use when the user says 'CRO,' 'conversion rate optimization,' 'this page isn't converting,' 'improve conversions,' 'why isn't this page working,' 'my landing page sucks,' 'form abandonment,' 'nobody's converting,' 'low conversion rate,' or 'this page needs work.' Use this even if the user just shares a URL and asks for feedback. For signup/registration flows, see signup. For post-signup activation, see onboarding. For popups/modals, see popups."
+   },
+   "b": {
+    "name": "onboarding",
+    "pack": "marketingskills",
+    "description": "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions \"onboarding flow,\" \"activation rate,\" \"user activation,\" \"first-run experience,\" \"empty states,\" \"onboarding checklist,\" \"aha moment,\" \"new user experience,\" \"users aren't activating,\" \"nobody completes setup,\" \"low activation rate,\" \"users sign up but don't use the product,\" \"time to value,\" or \"first session experience.\" Use this whenever users are signing up but not sticking around. For signup/registration optimization, see signup. For ongoing email sequences, see emails."
+   }
+  },
+  {
+   "id": "near-20",
+   "kind": "near",
+   "a": {
+    "name": "onboarding",
+    "pack": "marketingskills",
+    "description": "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions \"onboarding flow,\" \"activation rate,\" \"user activation,\" \"first-run experience,\" \"empty states,\" \"onboarding checklist,\" \"aha moment,\" \"new user experience,\" \"users aren't activating,\" \"nobody completes setup,\" \"low activation rate,\" \"users sign up but don't use the product,\" \"time to value,\" or \"first session experience.\" Use this whenever users are signing up but not sticking around. For signup/registration optimization, see signup. For ongoing email sequences, see emails."
+   },
+   "b": {
+    "name": "signup",
+    "pack": "marketingskills",
+    "description": "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions \"signup conversions,\" \"registration friction,\" \"signup form optimization,\" \"free trial signup,\" \"reduce signup dropoff,\" \"account creation flow,\" \"people aren't signing up,\" \"signup abandonment,\" \"trial conversion rate,\" \"nobody completes registration,\" \"too many steps to sign up,\" or \"simplify our signup.\" Use this whenever the user has a signup or registration flow that isn't performing. For post-signup onboarding, see onboarding. For lead capture forms (not account creation), see cro."
+   }
+  },
+  {
+   "id": "near-25",
+   "kind": "near",
+   "a": {
+    "name": "cold-email",
+    "pack": "marketingskills",
+    "description": "Write and run B2B cold outbound that gets replies, from cold emails and follow-ups to sending setup, LinkedIn, multichannel cadences, and reply handling. Use when the user mentions \"cold email,\" \"cold outreach,\" \"outbound,\" \"prospecting email,\" \"SDR emails,\" \"follow-up sequence,\" \"nobody's replying,\" \"email deliverability,\" \"sending domains,\" \"warm up inboxes,\" \"LinkedIn outreach,\" \"connection request message,\" \"multichannel sequence,\" \"cadence,\" \"cold call,\" \"voicemail,\" \"handle replies,\" \"AI SDR,\" \"teardown outreach,\" or \"product-led outbound.\" Send from secondary domains, verify lists first, turn off open tracking, and stop every channel when a prospect replies. Copy avoids AI tells like 'it's not X, it's Y' reveals. For building the list and account research, see prospecting. For lifecycle email, see emails. For call scripts and sales collateral, see sales-enablement."
+   },
+   "b": {
+    "name": "prospecting",
+    "pack": "marketingskills",
+    "description": "When the user wants to find, qualify, and build a list of prospects to reach out to, across B2B SaaS, general B2B, or local small businesses. Also use when the user mentions \"prospecting,\" \"build a prospect list,\" \"find leads,\" \"lead list,\" \"outbound list,\" \"target account list,\" \"ICP-fit accounts,\" \"find local businesses,\" \"find my first customers,\" \"design partners,\" \"signal-based outbound,\" \"gap plays,\" \"buying signals,\" \"intent data,\" \"job change alerts,\" \"waterfall enrichment,\" \"Clay table,\" \"lookalike accounts,\" \"catch-all emails,\" \"account tiering,\" or \"research this account before I reach out.\" Always verify emails before they reach a sequence, and never scrape LinkedIn. Define audiences in Sales Navigator and pull contacts from licensed data. Covers list building, signals, enrichment, verification, and account research. For the outreach itself (copy, sending setup, LinkedIn, cadences, replies), see cold-email. For researching competitors, see competitor-profiling."
+   }
+  },
+  {
+   "id": "near-12",
+   "kind": "near",
+   "a": {
+    "name": "free-tools",
+    "pack": "marketingskills",
+    "description": "When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or brand awareness. Also use when the user mentions \"engineering as marketing,\" \"free tool,\" \"marketing tool,\" \"calculator,\" \"generator,\" \"interactive tool,\" \"lead gen tool,\" \"build a tool for leads,\" \"free resource,\" \"ROI calculator,\" \"grader tool,\" \"audit tool,\" \"should I build a free tool,\" or \"tools for lead gen.\" Use this whenever someone wants to build something useful and give it away to attract leads or earn links. For downloadable content lead magnets (ebooks, checklists, templates), see lead-magnets."
+   },
+   "b": {
+    "name": "lead-magnets",
+    "pack": "marketingskills",
+    "description": "When the user wants to create, plan, or optimize a lead magnet for email capture or lead generation. Also use when the user mentions \"lead magnet,\" \"gated content,\" \"content upgrade,\" \"downloadable,\" \"ebook,\" \"cheat sheet,\" \"checklist,\" \"template download,\" \"opt-in,\" \"freebie,\" \"PDF download,\" \"resource library,\" \"content offer,\" \"email capture content,\" \"Notion template,\" \"spreadsheet template,\" \"what should I give away for emails,\" \"course as a skill,\" or \"package our content as an agent skill.\" Use this for planning what to create and how to distribute it. For interactive tools as lead magnets, see free-tools. For writing the actual content, see copywriting. For the email sequence after capture, see emails."
+   }
+  },
+  {
+   "id": "near-13",
+   "kind": "near",
+   "a": {
+    "name": "grill-with-docs",
+    "pack": "mattpocock-skills",
+    "description": "A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go."
+   },
+   "b": {
+    "name": "grill-me",
+    "pack": "mattpocock-skills",
+    "description": "A relentless interview to sharpen a plan or design."
+   }
+  },
+  {
+   "id": "flagged-5",
+   "kind": "flagged",
+   "a": {
+    "name": "code-review",
+    "pack": "mattpocock-skills",
+    "description": "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
+   },
+   "b": {
+    "name": "code-review",
+    "pack": "claude-code-game-studios",
+    "description": "Architectural code review — coding standards, SOLID, testability, performance concerns."
+   }
+  },
+  {
+   "id": "near-2",
+   "kind": "near",
+   "a": {
+    "name": "team-live-ops",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the live-ops team — live-ops-designer, economy-designer, analytics-engineer, community-manager, writer — for a season or live event."
+   },
+   "b": {
+    "name": "team-release",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the release team — release-manager, qa-lead, devops-engineer, producer — to execute a release from candidate to deployment."
+   }
+  },
+  {
+   "id": "flagged-4",
+   "kind": "flagged",
+   "a": {
+    "name": "prototype",
+    "pack": "mattpocock-skills",
+    "description": "Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like."
+   },
+   "b": {
+    "name": "prototype",
+    "pack": "claude-code-game-studios",
+    "description": "Concept prototype before GDDs — throwaway HTML, Engine or Paper build, PROCEED/PIVOT/KILL/NOT ASSESSED. After /brainstorm and /setup-engine."
+   }
+  },
+  {
+   "id": "near-14",
+   "kind": "near",
+   "a": {
+    "name": "team-audio",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the audio team — audio-director, sound-designer, technical-artist, gameplay-programmer — direction through implementation."
+   },
+   "b": {
+    "name": "team-ui",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the UI team through the UX pipeline — authoring, visual design, implementation, review, polish. Uses /ux-design, /ux-review, studio templates."
+   }
+  },
+  {
+   "id": "near-17",
+   "kind": "near",
+   "a": {
+    "name": "changelog",
+    "pack": "claude-code-game-studios",
+    "description": "Auto-generate a changelog from git commits and sprint data. Internal and player-facing versions."
+   },
+   "b": {
+    "name": "patch-notes",
+    "pack": "claude-code-game-studios",
+    "description": "Player-facing patch notes from git history and changelogs. Translates developer language into player communication."
+   }
+  },
+  {
+   "id": "near-18",
+   "kind": "near",
+   "a": {
+    "name": "subagent-driven-development",
+    "pack": "obra-superpowers",
+    "description": "Use when executing implementation plans with independent tasks in the current session"
+   },
+   "b": {
+    "name": "using-git-worktrees",
+    "pack": "obra-superpowers",
+    "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback"
+   }
+  },
+  {
+   "id": "near-10",
+   "kind": "near",
+   "a": {
+    "name": "cro",
+    "pack": "marketingskills",
+    "description": "When the user wants to optimize, improve, or increase conversions on any marketing page or form — including homepage, landing pages, pricing pages, feature pages, lead capture forms, or contact forms. Also use when the user says 'CRO,' 'conversion rate optimization,' 'this page isn't converting,' 'improve conversions,' 'why isn't this page working,' 'my landing page sucks,' 'form abandonment,' 'nobody's converting,' 'low conversion rate,' or 'this page needs work.' Use this even if the user just shares a URL and asks for feedback. For signup/registration flows, see signup. For post-signup activation, see onboarding. For popups/modals, see popups."
+   },
+   "b": {
+    "name": "popups",
+    "pack": "marketingskills",
+    "description": "When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also use when the user mentions \"exit intent,\" \"popup conversions,\" \"modal optimization,\" \"lead capture popup,\" \"email popup,\" \"announcement banner,\" \"overlay,\" \"collect emails with a popup,\" \"exit popup,\" \"scroll trigger,\" \"sticky bar,\" or \"notification bar.\" Use this for any overlay or interrupt-style conversion element. For forms outside of popups, see cro. For general page conversion optimization, see cro."
+   }
+  },
+  {
+   "id": "near-11",
+   "kind": "near",
+   "a": {
+    "name": "create-epics",
+    "pack": "claude-code-game-studios",
+    "description": "Turns the GDDs and architecture into epics, one per architectural module. Use when the user wants to break the game into epics or plan the work before writing stories. Not for splitting one epic into stories."
+   },
+   "b": {
+    "name": "create-stories",
+    "pack": "claude-code-game-studios",
+    "description": "Breaks one epic into implementable stories with acceptance criteria. Use when the user wants stories for an epic or the next batch of work to build. Not for turning the whole design into epics."
+   }
+  },
+  {
+   "id": "near-15",
+   "kind": "near",
+   "a": {
+    "name": "team-audio",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the audio team — audio-director, sound-designer, technical-artist, gameplay-programmer — direction through implementation."
+   },
+   "b": {
+    "name": "team-narrative",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the narrative team — narrative-director, writer, world-builder, level-designer — for story, world lore, narrative-driven levels."
+   }
+  },
+  {
+   "id": "near-16",
+   "kind": "near",
+   "a": {
+    "name": "to-spec",
+    "pack": "mattpocock-skills",
+    "description": "Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed."
+   },
+   "b": {
+    "name": "to-tickets",
+    "pack": "mattpocock-skills",
+    "description": "Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker)."
+   }
+  },
+  {
+   "id": "near-21",
+   "kind": "near",
+   "a": {
+    "name": "art-bible",
+    "pack": "claude-code-game-studios",
+    "description": "Author the Art Bible — visual identity gating asset production. Run before /map-systems."
+   },
+   "b": {
+    "name": "asset-spec",
+    "pack": "claude-code-game-studios",
+    "description": "Per-asset visual specs plus AI generation prompts from GDDs and character profiles. After the art bible."
+   }
+  },
+  {
+   "id": "flagged-6",
+   "kind": "flagged",
+   "a": {
+    "name": "cro",
+    "pack": "marketingskills",
+    "description": "When the user wants to optimize, improve, or increase conversions on any marketing page or form — including homepage, landing pages, pricing pages, feature pages, lead capture forms, or contact forms. Also use when the user says 'CRO,' 'conversion rate optimization,' 'this page isn't converting,' 'improve conversions,' 'why isn't this page working,' 'my landing page sucks,' 'form abandonment,' 'nobody's converting,' 'low conversion rate,' or 'this page needs work.' Use this even if the user just shares a URL and asks for feedback. For signup/registration flows, see signup. For post-signup activation, see onboarding. For popups/modals, see popups."
+   },
+   "b": {
+    "name": "signup",
+    "pack": "marketingskills",
+    "description": "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions \"signup conversions,\" \"registration friction,\" \"signup form optimization,\" \"free trial signup,\" \"reduce signup dropoff,\" \"account creation flow,\" \"people aren't signing up,\" \"signup abandonment,\" \"trial conversion rate,\" \"nobody completes registration,\" \"too many steps to sign up,\" or \"simplify our signup.\" Use this whenever the user has a signup or registration flow that isn't performing. For post-signup onboarding, see onboarding. For lead capture forms (not account creation), see cro."
+   }
+  },
+  {
+   "id": "flagged-3",
+   "kind": "flagged",
+   "a": {
+    "name": "team-audio",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the audio team — audio-director, sound-designer, technical-artist, gameplay-programmer — direction through implementation."
+   },
+   "b": {
+    "name": "team-combat",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the combat team — game-designer, gameplay-programmer, ai-programmer, technical-artist, sound-designer, qa-tester — design through implement and validate."
+   }
+  },
+  {
+   "id": "near-4",
+   "kind": "near",
+   "a": {
+    "name": "schema",
+    "pack": "marketingskills",
+    "description": "When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user mentions \"schema markup,\" \"structured data,\" \"JSON-LD,\" \"rich snippets,\" \"schema.org,\" \"FAQ schema,\" \"product schema,\" \"review schema,\" \"breadcrumb schema,\" \"Google rich results,\" \"knowledge panel,\" \"star ratings in search,\" or \"add structured data.\" Use this whenever someone wants their pages to show enhanced results in Google. For broader SEO issues, see seo-audit. For AI search optimization, see ai-seo."
+   },
+   "b": {
+    "name": "seo-audit",
+    "pack": "marketingskills",
+    "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not ranking,\" \"SEO issues,\" \"on-page SEO,\" \"meta tags review,\" \"SEO health check,\" \"my traffic dropped,\" \"lost rankings,\" \"not showing up in Google,\" \"site isn't ranking,\" \"Google update hit me,\" \"page speed,\" \"core web vitals,\" \"crawl errors,\" \"indexing issues,\" \"stuck on page 2,\" \"striking distance keywords,\" \"title tag rewrite,\" \"low CTR,\" \"local SEO,\" \"Google Business Profile,\" or \"map pack.\" Use this even if the user just says something vague like \"my SEO is bad\" or \"help with SEO\" — start with an audit. For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema. For AI search optimization, see ai-seo."
+   }
+  },
+  {
+   "id": "near-5",
+   "kind": "near",
+   "a": {
+    "name": "team-level",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the level team — level-designer, narrative-director, world-builder, art-director, systems-designer, qa-tester — for complete area creation."
+   },
+   "b": {
+    "name": "team-polish",
+    "pack": "claude-code-game-studios",
+    "description": "Orchestrate the polish team — performance-analyst, technical-artist, sound-designer, qa-tester — to optimize and harden a feature or area."
+   }
+  },
+  {
+   "id": "near-19",
+   "kind": "near",
+   "a": {
+    "name": "copy-editing",
+    "pack": "marketingskills",
+    "description": "When the user wants to edit, review, or improve existing marketing copy, or refresh outdated content. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' 'copy sweep,' 'tighten this up,' 'this reads awkwardly,' 'clean up this text,' 'too wordy,' 'sharpen the messaging,' 'refresh this content,' 'update this page,' 'this content is outdated,' or 'content audit,' 'this sounds like AI,' 'AI slop,' 'de-slop this,' or 'make it sound human.' Use this when the user already has copy and wants it improved or refreshed rather than rewritten from scratch. Every edit removes AI tells such as 'it's not X, it's Y' reveals, 'no X, no Y, no Z' lists, and sentences that trail into extra comma clauses. A request to fix one line gets a point edit that changes only that line. For writing new copy, see copywriting."
+   },
+   "b": {
+    "name": "copywriting",
+    "pack": "marketingskills",
+    "description": "When the user wants to write, rewrite, or improve marketing copy for any page, including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says \"write copy for,\" \"improve this copy,\" \"rewrite this page,\" \"marketing copy,\" \"headline help,\" \"CTA copy,\" \"value proposition,\" \"tagline,\" \"hero section copy,\" \"this copy is weak,\" \"this sounds like AI,\" \"AI slop,\" \"make it sound human,\" or \"help me describe my product.\" Drafts never use AI tells like \"it's not X, it's Y\" reveals, \"no X, no Y, no Z\" lists, or sentences that trail into extra comma clauses. For email copy, see emails. For popup copy, see popups. For editing existing copy, see copy-editing. For the offer underneath the copy (bonuses, guarantees, value framing), see offers. Claims must be supportable, and a declined claim names the evidence that would unlock it. Diagnoses the input first (blank brief, real voice, or point edit) and changes only what it calls for."
+   }
+  }
+ ]
+}
