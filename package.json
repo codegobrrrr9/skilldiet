@@ -1,0 +1,12 @@
+{
+  "name": "skilldiet",
+  "version": "0.1.0",
+  "description": "What your agent skills cost you every session, which ones collide, and which never fire. Measures the skill listing in tokens, finds overlapping descriptions, reads your session logs for use, and parks unused skills reversibly.",
+  "type": "module",
+  "bin": { "skilldiet": "./skills/skilldiet/scripts/skilldiet.js" },
+  "scripts": { "test": "node --test tests/*.test.js" },
+  "repository": { "type": "git", "url": "https://github.com/codegobrrrr9/skilldiet" },
+  "keywords": ["agent-skills", "claude-skills", "context", "tokens", "skills", "claude-code", "codex", "cursor"],
+  "license": "MIT",
+  "engines": { "node": ">=18" }
+}

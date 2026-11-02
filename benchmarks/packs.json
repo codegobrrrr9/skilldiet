@@ -1,0 +1,14 @@
+{
+  "note": "Seven skill packs trending on GitHub on 2026-11-01 (10,000+ stars, gained stars in the last 24 hours), pinned to the commit below. A skill is a SKILL.md at skills/<name>/, skills/<group>/<name>/ or .claude/skills/<name>/ (so mirror copies for other agents, tests and templates are not counted twice).",
+  "include": "^(?:\.claude/)?skills/(?:[^/]+/){1,2}SKILL\.md$",
+  "exclude": "template|/tests?/|node_modules",
+  "packs": [
+    { "id": "obra-superpowers", "repo": "obra/superpowers", "sha": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b", "stars": 310572 },
+    { "id": "mattpocock-skills", "repo": "mattpocock/skills", "sha": "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d", "stars": 309173 },
+    { "id": "anthropics-skills", "repo": "anthropics/skills", "sha": "ca45fc496a3436251f191354091d557da31c15b5", "stars": 186317 },
+    { "id": "taste-skill", "repo": "Leonxlnx/taste-skill", "sha": "12af471f627f866411b4bd785b19646d3672784c", "stars": 107684 },
+    { "id": "impeccable", "repo": "pbakaus/impeccable", "sha": "e89e3ada3e875a89ac2c5d33d11e65ebef6fe285", "stars": 99229 },
+    { "id": "marketingskills", "repo": "coreyhaines31/marketingskills", "sha": "88c79f6528a9347420e57ceb1fff9a60de651768", "stars": 57833 },
+    { "id": "claude-code-game-studios", "repo": "Donchitos/Claude-Code-Game-Studios", "sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418", "stars": 32124 }
+  ]
+}
